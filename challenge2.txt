@@ -1,0 +1,16 @@
+provider "azurerm" {
+  version = "~> 2.0"
+  features {}    
+}
+
+data "azurerm_instance_metadata" "instance_metadata" {}
+
+output "metadata_json" {
+  value = data.azurerm_instance_metadata.instance_metadata.metadata_json
+}
+
+output "metadata_value" {
+  value = data.azurerm_instance_metadata.instance_metadata.get("key")
+}
+
+Apart from this code there will be local.tf, module.tf, provider.tf and output.tf file will be there to declare and call out the resources.

@@ -1,0 +1,22 @@
+Here is an example of a 3-tier environment steps using Terraform on Azure:
+
+1. Network Tier:
+- Virtual Network (VNet): Creates a virtual network that will be used to separate the different tiers.
+- Subnets: Creates three subnets within the virtual network, one for each tier.
+- Network Security Groups (NSGs): Creates three NSGs, one for each tier, to control inbound and outbound traffic.
+- Network Interfaces: Creates network interfaces for each of the virtual machines in the web and application tiers.
+- Public IP Addresses: Creates a public IP address for the load balancer in the web tier.
+
+2. Web Tier:
+- Virtual Machines: Creates multiple virtual machines running a web server, each assigned a network interface and public IP address.
+- Load Balancer: Configures a load balancer to distribute traffic across the web servers.
+
+3. Application Tier:
+- Virtual Machines: Creates multiple virtual machines running an application server, each assigned a network interface.
+- Application Load Balancer: Configures an application load balancer to distribute traffic across the application servers.
+
+4. Database Tier:
+- Azure Database for MySQL: Creates an Azure Database for MySQL server to be used as the database for the application.
+- Firewall Rule: Configures a firewall rule to
+
+NOTE: Network Tier could change depends on the requirement, We could implement few more things as per the need of the client to make Infra highly available.
